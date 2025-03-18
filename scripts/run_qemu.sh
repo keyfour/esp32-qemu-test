@@ -28,5 +28,5 @@ if [ ! -f "$flash_image" ]; then
 fi
 
 echo "Starting QEMU..."
-qemu-esp-xtensa -nographic -machine esp32 -serial mon:stdio \
+qemu-esp-xtensa -nographic -machine esp32 -smp 1 -serial mon:stdio \
   -drive file="${flash_image}",if=mtd,format=raw
