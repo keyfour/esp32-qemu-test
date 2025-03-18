@@ -1,0 +1,20 @@
+# ESP32 Single Core Configuration
+
+# Force FreeRTOS to run in single core mode
+CONFIG_FREERTOS_UNICORE=y
+
+# Disable the second core
+CONFIG_ESP32_DPORT_WORKAROUND=y
+
+# Disable multi-core system functions
+CONFIG_ESP32_MULTIPLE_CORES=n
+
+# Disable second core watchdog
+CONFIG_ESP_INT_WDT_TIMEOUT_MS=0
+CONFIG_ESP_TASK_WDT_TIMEOUT_S=5
+
+# Enable application trace for debugging
+CONFIG_ESP32_APPTRACE_ENABLE=y
+CONFIG_ESP32_APPTRACE_DEST_TRAX=y
+CONFIG_ESP32_APPTRACE_LOCK_ENABLE=y
+CONFIG_ESP32_APPTRACE_ONPANIC_HOST_FLUSH_TMO=0
