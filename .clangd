@@ -1,0 +1,15 @@
+CompileFlags:
+  Remove: [-fstrict-volatile-bitfields, -mlongcalls, -mlong-calls]
+  Add:
+    [
+      "-I$HOME/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/sys-include/",
+      "-I$HOME/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/",
+      "-I$HOME/.platformio/packages/framework-espidf/components/freertos/include/",
+    ]
+  Compiler: gcc
+Diagnostics:
+  Suppress:
+    - file:*/machine/endian.h*
+    - file:*/Arduino.h*
+    - -Wunknown-attributes
+    - -Wincompatible-pointer-types
